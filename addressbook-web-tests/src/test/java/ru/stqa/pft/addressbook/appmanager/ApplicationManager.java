@@ -36,7 +36,7 @@ public class ApplicationManager {
         navigationHelper = new NavigationHelper(wd);
         contactHelper = new ContactHelper(wd);
         sessionHelper = new SessionHelper(wd);
-        sessionHelper.login("admin", "secret");
+        getSessionHelper().login("admin", "secret");
     }
 
     public void stop() {
@@ -53,5 +53,9 @@ public class ApplicationManager {
 
     public ContactHelper getContactHelper() {
         return contactHelper;
+    }
+
+    public SessionHelper getSessionHelper() {
+        return sessionHelper;
     }
 }
