@@ -52,6 +52,9 @@ public class ContactHelper extends HelperBase {
     }
 
     public void returnToHomePageLink() {
+        if (isElementPresent(By.id("maintable"))){
+            return;
+        }
         click(By.linkText("home page"));
     }
 
