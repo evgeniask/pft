@@ -1,17 +1,15 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -37,15 +35,14 @@ public class ContactHelper extends HelperBase {
         } else {
           Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
-
     }
 
     public void initContactCreation() {
         click(By.linkText("add new"));
     }
 
-    public void selectContact(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    private void selectContactById(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
     public void deleteSelectedContacts() {
@@ -65,15 +62,10 @@ public class ContactHelper extends HelperBase {
 
     public void initContactModification() {
         click(By.xpath(".//*[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
-
     }
 
     public void submitContactModification() {
         click(By.name("update"));
-    }
-
-    public boolean isThereAContact() {
-        return isElementPresent(By.name("selected[]"));
     }
 
     public void create(ContactData contact) {
@@ -90,18 +82,22 @@ public class ContactHelper extends HelperBase {
         returnToHomePageLink();
     }
 
-    public void delete(int index) {
-        selectContact(index);
+    public void delete(ContactData contact) {
+        selectContactById(contact.getId());
         deleteSelectedContacts();
         deleteContactAlert();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 
     public int getContactCount() {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> list() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<ContactData>();
         List<WebElement> rows = wd.findElements(By.name("entry"));
         for (WebElement row : rows) {
             List<WebElement> cells = row.findElements(By.tagName("td"));
@@ -113,4 +109,5 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+
 }
