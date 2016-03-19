@@ -18,7 +18,6 @@ public class GroupData {
         this.name = name;
         this.header = header;
         this.footer = footer;
-
     }
 
     public int getId() {
