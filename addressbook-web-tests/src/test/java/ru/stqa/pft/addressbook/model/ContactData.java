@@ -103,7 +103,6 @@ public class ContactData {
         if (id != that.id) return false;
         if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
         return !(lastname != null ? !lastname.equals(that.lastname) : that.lastname != null);
-
     }
 
     @Override
@@ -120,5 +119,4 @@ public class ContactData {
                 "id=" + id +
                 '}';
     }
-
 }
