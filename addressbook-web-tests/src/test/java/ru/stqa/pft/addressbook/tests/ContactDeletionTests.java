@@ -15,7 +15,10 @@ public class ContactDeletionTests extends TestBase{
         app.goTo().homePage();
         if (app.contact().all().size() == 0) {
             app.contact().create(new ContactData()
-                    .withFirstname("Ivan").withLastname("Ivanov").withAddress("SPb, Noname street 77-35").withHomephone("9934578").withMobilephone("9256883444").withEmail("ivan.ivanov@ivanov.ivan").withEmail2("ivan.ivanov@ttt.com").withGroup("test1"));
+                    .withFirstname("Ivan").withLastname("Ivanov").withAddress("SPb, Noname street 77-35")
+                    .withHomephone("(993)4578").withMobilephone("925-6883-444").withWorkphone("44 55 77")
+                    .withEmail("ivan.ivanov@ivanov.ivan").withEmail2("ivan.ivanov@ttt.com")
+                    .withEmail3("ivan.ivanov@third.com").withGroup("test1"));
         }
     }
 
