@@ -34,7 +34,7 @@ public class ContactHelper extends HelperBase {
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
         } else {
-          Assert.assertFalse(isElementPresent(By.name("new_group")));
+            Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
     }
 
@@ -55,18 +55,18 @@ public class ContactHelper extends HelperBase {
     }
 
     public void returnToHomePageLink() {
-        if (isElementPresent(By.id("maintable"))){
+        if (isElementPresent(By.id("maintable"))) {
             return;
         }
         click(By.linkText("home page"));
     }
 
-    public void initContactModification() {
-        click(By.xpath(".//*[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
-    }
-
     public void initContactModificationById(int id) {
         wd.findElement((By.cssSelector(String.format("a[href='edit.php?id=%s']", id)))).click();
+    }
+
+    public void goToContactDetails(int id) {
+        wd.findElement((By.cssSelector(String.format("a[href='view.php?id=%s']", id)))).click();
     }
 
     public void submitContactModification() {
@@ -82,7 +82,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void modify(ContactData contact) {
-        initContactModification();
+        initContactModificationById(contact.getId());
         fillContactForm(contact, false);
         submitContactModification();
         contactCache = null;
@@ -142,5 +142,15 @@ public class ContactHelper extends HelperBase {
         return new ContactData().withId(contact.getId()).withFirstname(firstname).withLastname(lastname)
                 .withHomephone(homephone).withMobilephone(mobilephone).withWorkphone(workphone).withEmail(email)
                 .withEmail2(email2).withEmail3(email3).withAddress(address);
+    }
+
+    public ContactData imfoFromDetails(ContactData contact) {
+        goToContactDetails(contact.getId());
+        String allDetails = wd.findElement(By.id("content")).getText()
+                .replaceAll("(Member of.*|Notice:.*|test.*|[WMH]: | \\(www.*\\))", "")
+                .replaceAll("\\s", "").replaceAll("[-()]", "")
+                .replaceAll("\n+", "\n");
+        wd.navigate().back();
+        return new ContactData().withAllDetails(allDetails);
     }
 }
