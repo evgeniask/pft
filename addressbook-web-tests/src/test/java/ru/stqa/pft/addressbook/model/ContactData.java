@@ -9,7 +9,7 @@ import java.io.File;
 @XStreamAlias("contact")
 public class ContactData {
     @XStreamOmitField
-    private int id  = Integer.MAX_VALUE;
+    private int id = Integer.MAX_VALUE;
     @Expose
     private String firstname;
     @Expose
