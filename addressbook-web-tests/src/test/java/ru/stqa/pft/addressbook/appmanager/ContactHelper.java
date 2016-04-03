@@ -145,10 +145,10 @@ public class ContactHelper extends HelperBase {
                 .withEmail2(email2).withEmail3(email3).withAddress(address);
     }
 
-    public ContactData imfoFromDetails(ContactData contact) {
+    public ContactData infoFromDetails(ContactData contact) {
         goToContactDetails(contact.getId());
         String allDetails = wd.findElement(By.id("content")).getText()
-                .replaceAll("(Member of.*|Notice:.*|test.*|[WMH]: | \\(www.*\\))", "")
+                .replaceAll("(Member of.*|Notice:.*|x(-)*|[WMH]: | \\(www.*\\))", "")
                 .replaceAll("\\s", "").replaceAll("[-()]", "")
                 .replaceAll("\n+", "\n");
         wd.navigate().back();

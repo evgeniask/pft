@@ -29,7 +29,7 @@ public class ContactDetailsTest extends TestBase {
     public void testContactDetails() {
         app.goTo().homePage();
         ContactData contact = app.contact().all().iterator().next();
-        ContactData contactInfoFromDetails = app.contact().imfoFromDetails(contact);
+        ContactData contactInfoFromDetails = app.contact().infoFromDetails(contact);
         ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 
         assertThat(contactInfoFromDetails.getAllDetails(), equalTo(mergeDetails(contactInfoFromEditForm)));
