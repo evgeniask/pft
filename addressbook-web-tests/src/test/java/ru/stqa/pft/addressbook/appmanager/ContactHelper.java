@@ -148,7 +148,7 @@ public class ContactHelper extends HelperBase {
     public ContactData infoFromDetails(ContactData contact) {
         goToContactDetails(contact.getId());
         String allDetails = wd.findElement(By.id("content")).getText()
-                .replaceAll("(Member of.*|Notice:.*|x(-)*|[WMH]: | \\(www.*\\))", "")
+                .replaceAll("(Member of.*|Notice:.*|[WMH]: |\\(www.*\\))", "")
                 .replaceAll("\\s", "").replaceAll("[-()]", "")
                 .replaceAll("\n+", "\n");
         wd.navigate().back();
