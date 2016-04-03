@@ -3,9 +3,9 @@
     <firstname>firstname 0</firstname>
     <lastname>lastname 0</lastname>
     <address>city, street, 0</address>
-    <homephone>(0000)0</homephone>
-    <mobilephone>00-00-0</mobilephone>
-    <workphone>00 00 0</workphone>
+    <homephone>(1234)0</homephone>
+    <mobilephone>12-34-0</mobilephone>
+    <workphone>12 34 0</workphone>
     <email>email@test.com0</email>
     <email2>email2@test.com0</email2>
     <email3>email3@test.com0</email3>
@@ -15,9 +15,9 @@
     <firstname>firstname 1</firstname>
     <lastname>lastname 1</lastname>
     <address>city, street, 1</address>
-    <homephone>(0000)1</homephone>
-    <mobilephone>00-00-1</mobilephone>
-    <workphone>00 00 1</workphone>
+    <homephone>(1234)1</homephone>
+    <mobilephone>12-34-1</mobilephone>
+    <workphone>12 34 1</workphone>
     <email>email@test.com1</email>
     <email2>email2@test.com1</email2>
     <email3>email3@test.com1</email3>
@@ -27,9 +27,9 @@
     <firstname>firstname 2</firstname>
     <lastname>lastname 2</lastname>
     <address>city, street, 2</address>
-    <homephone>(0000)2</homephone>
-    <mobilephone>00-00-2</mobilephone>
-    <workphone>00 00 2</workphone>
+    <homephone>(1234)2</homephone>
+    <mobilephone>12-34-2</mobilephone>
+    <workphone>12 34 2</workphone>
     <email>email@test.com2</email>
     <email2>email2@test.com2</email2>
     <email3>email3@test.com2</email3>
