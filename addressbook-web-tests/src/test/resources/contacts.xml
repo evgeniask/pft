@@ -1,0 +1,62 @@
+<list>
+  <contact>
+    <firstname>firstname 0</firstname>
+    <lastname>lastname 0</lastname>
+    <address>city, street, 0</address>
+    <homephone>(0000)0</homephone>
+    <mobilephone>00-00-0</mobilephone>
+    <workphone>00 00 0</workphone>
+    <email>email@test.com0</email>
+    <email2>email2@test.com0</email2>
+    <email3>email3@test.com0</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <firstname>firstname 1</firstname>
+    <lastname>lastname 1</lastname>
+    <address>city, street, 1</address>
+    <homephone>(0000)1</homephone>
+    <mobilephone>00-00-1</mobilephone>
+    <workphone>00 00 1</workphone>
+    <email>email@test.com1</email>
+    <email2>email2@test.com1</email2>
+    <email3>email3@test.com1</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <firstname>firstname 2</firstname>
+    <lastname>lastname 2</lastname>
+    <address>city, street, 2</address>
+    <homephone>(0000)2</homephone>
+    <mobilephone>00-00-2</mobilephone>
+    <workphone>00 00 2</workphone>
+    <email>email@test.com2</email>
+    <email2>email2@test.com2</email2>
+    <email3>email3@test.com2</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <firstname>firstname 3</firstname>
+    <lastname>lastname 3</lastname>
+    <address>city, street, 3</address>
+    <homephone>(0000)3</homephone>
+    <mobilephone>00-00-3</mobilephone>
+    <workphone>00 00 3</workphone>
+    <email>email@test.com3</email>
+    <email2>email2@test.com3</email2>
+    <email3>email3@test.com3</email3>
+    <group>test 1</group>
+  </contact>
+  <contact>
+    <firstname>firstname 4</firstname>
+    <lastname>lastname 4</lastname>
+    <address>city, street, 4</address>
+    <homephone>(0000)4</homephone>
+    <mobilephone>00-00-4</mobilephone>
+    <workphone>00 00 4</workphone>
+    <email>email@test.com4</email>
+    <email2>email2@test.com4</email2>
+    <email3>email3@test.com4</email3>
+    <group>test 1</group>
+  </contact>
+</list>
