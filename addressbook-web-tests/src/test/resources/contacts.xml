@@ -9,7 +9,7 @@
     <email>email@test.com0</email>
     <email2>email2@test.com0</email2>
     <email3>email3@test.com0</email3>
-    <group>test 1</group>
+    <group>test1</group>
   </contact>
   <contact>
     <firstname>firstname 1</firstname>
@@ -21,7 +21,7 @@
     <email>email@test.com1</email>
     <email2>email2@test.com1</email2>
     <email3>email3@test.com1</email3>
-    <group>test 1</group>
+    <group>test1</group>
   </contact>
   <contact>
     <firstname>firstname 2</firstname>
@@ -33,30 +33,6 @@
     <email>email@test.com2</email>
     <email2>email2@test.com2</email2>
     <email3>email3@test.com2</email3>
-    <group>test 1</group>
-  </contact>
-  <contact>
-    <firstname>firstname 3</firstname>
-    <lastname>lastname 3</lastname>
-    <address>city, street, 3</address>
-    <homephone>(0000)3</homephone>
-    <mobilephone>00-00-3</mobilephone>
-    <workphone>00 00 3</workphone>
-    <email>email@test.com3</email>
-    <email2>email2@test.com3</email2>
-    <email3>email3@test.com3</email3>
-    <group>test 1</group>
-  </contact>
-  <contact>
-    <firstname>firstname 4</firstname>
-    <lastname>lastname 4</lastname>
-    <address>city, street, 4</address>
-    <homephone>(0000)4</homephone>
-    <mobilephone>00-00-4</mobilephone>
-    <workphone>00 00 4</workphone>
-    <email>email@test.com4</email>
-    <email2>email2@test.com4</email2>
-    <email3>email3@test.com4</email3>
-    <group>test 1</group>
+    <group>test1</group>
   </contact>
 </list>

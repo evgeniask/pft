@@ -9,7 +9,7 @@
     "email": "email@test.com0",
     "email2": "email2@test.com0",
     "email3": "email3@test.com0",
-    "group": "test 1"
+    "group": "test1"
   },
   {
     "firstname": "firstname 1",
@@ -21,7 +21,7 @@
     "email": "email@test.com1",
     "email2": "email2@test.com1",
     "email3": "email3@test.com1",
-    "group": "test 1"
+    "group": "test1"
   },
   {
     "firstname": "firstname 2",
@@ -33,30 +33,6 @@
     "email": "email@test.com2",
     "email2": "email2@test.com2",
     "email3": "email3@test.com2",
-    "group": "test 1"
-  },
-  {
-    "firstname": "firstname 3",
-    "lastname": "lastname 3",
-    "address": "city, street, 3",
-    "homephone": "(0000)3",
-    "mobilephone": "00-00-3",
-    "workphone": "00 00 3",
-    "email": "email@test.com3",
-    "email2": "email2@test.com3",
-    "email3": "email3@test.com3",
-    "group": "test 1"
-  },
-  {
-    "firstname": "firstname 4",
-    "lastname": "lastname 4",
-    "address": "city, street, 4",
-    "homephone": "(0000)4",
-    "mobilephone": "00-00-4",
-    "workphone": "00 00 4",
-    "email": "email@test.com4",
-    "email2": "email2@test.com4",
-    "email3": "email3@test.com4",
-    "group": "test 1"
+    "group": "test1"
   }
 ]
