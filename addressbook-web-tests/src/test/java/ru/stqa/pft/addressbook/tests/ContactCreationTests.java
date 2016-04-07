@@ -7,8 +7,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
-import ru.stqa.pft.addressbook.model.GroupData;
-import ru.stqa.pft.addressbook.model.Groups;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -62,7 +60,7 @@ public class ContactCreationTests extends TestBase {
                 String[] split = line.split(";");
                 list.add(new Object[]{new ContactData().withFirstname(split[0]).withLastname(split[1]).withAddress(split[2])
                         .withHomephone(split[3]).withMobilephone(split[4]).withWorkphone(split[5])
-                        .withEmail(split[6]).withEmail2(split[7]).withEmail3(split[8])});
+                        .withEmail(split[6]).withEmail2(split[7]).withEmail3(split[8]).withGroup(split[9])});
                 line = reader.readLine();
             }
             return list.iterator();
@@ -71,15 +69,10 @@ public class ContactCreationTests extends TestBase {
 
     @Test(dataProvider = "validContactsFromJson")
     public void testContactCreation(ContactData contact) {
-        if (app.db().groups().size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test1"));
-        }
-        Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         app.goTo().homePage();
         //File photo = new File("src/test/resources/picture.png");
-        app.contact().create(contact.inGroup(groups.iterator().next()));
+        app.contact().create(contact);
         assertThat(app.contact().count(), equalTo(before.size() + 1));
         Contacts after = app.db().contacts();
         assertThat(after, equalTo
@@ -89,17 +82,12 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void testBadContactCreation() {
-        if (app.db().groups().size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test1"));
-        }
-        Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         ContactData contact = new ContactData()
                 .withFirstname("Ivan'").withLastname("Ivanov").withAddress("SPb, Noname street 77-35")
                 .withHomephone("(993)4578").withMobilephone("925-6883-444").withWorkphone("44 55 77")
                 .withEmail("ivan.ivanov@ivanov.ivan").withEmail2("ivan.ivanov@ttt.com")
-                .withEmail3("ivan.ivanov@third.com");
+                .withEmail3("ivan.ivanov@third.com").withGroup("test1");
         app.goTo().homePage();
         app.contact().create(contact);
         assertThat(app.contact().count(), equalTo(before.size()));

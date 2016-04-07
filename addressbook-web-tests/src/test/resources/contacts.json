@@ -8,7 +8,8 @@
     "workphone": "12 34 0",
     "email": "email@test.com0",
     "email2": "email2@test.com0",
-    "email3": "email3@test.com0"
+    "email3": "email3@test.com0",
+    "group": "test1"
   },
   {
     "firstname": "firstname 1",
@@ -19,7 +20,8 @@
     "workphone": "12 34 1",
     "email": "email@test.com1",
     "email2": "email2@test.com1",
-    "email3": "email3@test.com1"
+    "email3": "email3@test.com1",
+    "group": "test1"
   },
   {
     "firstname": "firstname 2",
@@ -30,6 +32,7 @@
     "workphone": "12 34 2",
     "email": "email@test.com2",
     "email2": "email2@test.com2",
-    "email3": "email3@test.com2"
+    "email3": "email3@test.com2",
+    "group": "test1"
   }
 ]
