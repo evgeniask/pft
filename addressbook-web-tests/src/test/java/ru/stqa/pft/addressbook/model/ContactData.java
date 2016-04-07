@@ -7,6 +7,8 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "addressbook")
@@ -61,10 +63,6 @@ public class ContactData {
     @Type(type = "text")
     private String email3;
 
-    @Expose
-    @Transient
-    private String group;
-
     @Transient
     private String allPhones;
 
@@ -78,6 +76,11 @@ public class ContactData {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
+    @ManyToMany
+    @JoinTable(name = "address_in_groups",
+            joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
     public int getId() {
         return id;
@@ -127,15 +130,15 @@ public class ContactData {
         return allEmails;
     }
 
-    public String getGroup() {
-        return group;
-    }
-
     public String getAllDetails() {
         return allDetails;
     }
 
-//    public File getPhoto() {
+    public Groups getGroups() {
+        return new Groups(groups);
+    }
+
+    //    public File getPhoto() {
 //        return new File(photo);
 //    }
 
@@ -194,11 +197,6 @@ public class ContactData {
         return this;
     }
 
-    public ContactData withGroup(String group) {
-        this.group = group;
-        return this;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -237,7 +235,6 @@ public class ContactData {
     @Override
     public String toString() {
         return "ContactData{" +
-                "group='" + group + '\'' +
                 ", id=" + id +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
@@ -266,4 +263,8 @@ public class ContactData {
         return this;
     }
 
+    public ContactData inGroup(GroupData group) {
+        groups.add(group);
+        return this;
+    }
 }
