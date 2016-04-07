@@ -89,11 +89,6 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void testBadContactCreation() {
-        if (app.db().groups().size() == 0) {
-            app.goTo().groupPage();
-            app.group().create(new GroupData().withName("test1"));
-        }
-        Groups groups = app.db().groups();
         Contacts before = app.db().contacts();
         ContactData contact = new ContactData()
                 .withFirstname("Ivan'").withLastname("Ivanov").withAddress("SPb, Noname street 77-35")
