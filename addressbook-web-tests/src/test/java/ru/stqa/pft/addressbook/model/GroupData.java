@@ -55,6 +55,14 @@ public class GroupData {
     @Type(type = "text")
     private String footer;
 
+    @Override
+    public String toString() {
+        return "GroupData{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
+
     @ManyToMany(mappedBy = "groups")
     private Set<ContactData> contacts = new HashSet<ContactData>();
 
@@ -96,14 +104,6 @@ public class GroupData {
     public GroupData withFooter(String footer) {
         this.footer = footer;
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "GroupData{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
     }
 
 }

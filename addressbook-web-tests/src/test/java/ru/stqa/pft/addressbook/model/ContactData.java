@@ -77,7 +77,7 @@ public class ContactData {
     @Type(type = "text")
     private String photo;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "address_in_groups",
             joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
     private Set<GroupData> groups = new HashSet<GroupData>();
@@ -132,6 +132,22 @@ public class ContactData {
 
     public String getAllDetails() {
         return allDetails;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "id=" + id +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", address='" + address + '\'' +
+                ", homephone='" + homephone + '\'' +
+                ", mobilephone='" + mobilephone + '\'' +
+                ", workphone='" + workphone + '\'' +
+                ", email='" + email + '\'' +
+                ", email2='" + email2 + '\'' +
+                ", email3='" + email3 + '\'' +
+                '}';
     }
 
     public Groups getGroups() {
@@ -230,22 +246,6 @@ public class ContactData {
         result = 31 * result + (email2 != null ? email2.hashCode() : 0);
         result = 31 * result + (email3 != null ? email3.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        return "ContactData{" +
-                ", id=" + id +
-                ", firstname='" + firstname + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", address='" + address + '\'' +
-                ", homephone='" + homephone + '\'' +
-                ", mobilephone='" + mobilephone + '\'' +
-                ", workphone='" + workphone + '\'' +
-                ", email='" + email + '\'' +
-                ", email2='" + email2 + '\'' +
-                ", email3='" + email3 + '\'' +
-                '}';
     }
 
     public ContactData withAllDetails(String allDetails) {
