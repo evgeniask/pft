@@ -39,15 +39,6 @@ public class UserData {
         return email;
     }
 
-    @Override
-    public String toString() {
-        return "UserData{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
-
     public UserData withId(int id) {
         this.id = id;
         return this;
@@ -56,6 +47,15 @@ public class UserData {
     public UserData withUsername(String username) {
         this.username = username;
         return this;
+    }
+
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 
     public UserData withPassword(String password) {
