@@ -26,16 +26,4 @@ public class Users extends ForwardingSet<UserData> {
     protected Set<UserData> delegate() {
         return delegate;
     }
-
-//    public Users withAdded(UserData contact){
-//        Contacts contacts = new Contacts(this);
-//        contacts.add(contact);
-//        return contacts;
-//    }
-//
-//    public Contacts without(ContactData contact){
-//        Contacts contacts = new Contacts(this);
-//        contacts.remove(contact);
-//        return contacts;
-//    }
 }

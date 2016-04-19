@@ -19,7 +19,7 @@ public class HttpSession {
     private CloseableHttpClient httpclient;
     private ApplicationManager app;
 
-    public  HttpSession(ApplicationManager app) {
+    public HttpSession(ApplicationManager app) {
         this.app = app;
         httpclient = HttpClients.custom().setRedirectStrategy(new LaxRedirectStrategy()).build();
     }
