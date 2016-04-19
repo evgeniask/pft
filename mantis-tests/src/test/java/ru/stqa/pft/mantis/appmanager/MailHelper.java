@@ -32,7 +32,7 @@ public class MailHelper {
                 e.printStackTrace();
             }
         }
-    throw new Error("No mail");
+        throw new Error("No mail");
     }
 
     public static MailMessage toModelMail(WiserMessage m) {
@@ -55,9 +55,15 @@ public class MailHelper {
     }
 
     public String findChangePasswordLink(List<MailMessage> mailMessages, String email) {
-        MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
-        VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
-        return regex.getText(mailMessage.text);
+        for (MailMessage message : mailMessages) {
+            String t = message.getTo();
+            String s = message.getText();
+            if (s.contains("password change") && (t.contains(email))) {
+                VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
+                return regex.getText(message.text);
+            }
+        }
+        return null;
     }
 
     public void start() {

@@ -10,4 +10,11 @@ public class MailMessage {
         this.text = text;
     }
 
+    public String getTo() {
+        return to;
+    }
+
+    public String getText() {
+        return text;
+    }
 }
