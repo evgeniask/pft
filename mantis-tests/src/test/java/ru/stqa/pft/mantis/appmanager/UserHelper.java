@@ -18,8 +18,10 @@ public class UserHelper extends HelperBase {
         String username = user.getUsername();
         String password = user.getPassword();
         String email = user.getEmail();
+        app.james().createUser(username, password);
         app.registration().start(username, email);
-        List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+        //List<MailMessage> mailMessages = app.mail().waitForMail(2, 10000);
+        List<MailMessage> mailMessages = app.james().waitForMail(username, password, 60000);
         String confirmationLink = app.mail().findConfirmationLink(mailMessages, email);
         app.registration().finish(confirmationLink, password);
     }
